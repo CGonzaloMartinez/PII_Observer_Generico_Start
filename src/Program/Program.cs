@@ -1,4 +1,6 @@
-﻿namespace Observer
+﻿using System;
+
+namespace Observer
 {
     class Program
     {
@@ -6,8 +8,9 @@
         {        
             TemperatureSensor sensor = new TemperatureSensor();
             TemperatureReporter reporter = new TemperatureReporter();
-            reporter.StartReporting(sensor);
-            sensor.GetTemperature();
+            DateTime localDate = DateTime.Now;
+            Temperature a = new Temperature(20, localDate);;
+            sensor.GetTemperature(); 
         }
     }
 }
